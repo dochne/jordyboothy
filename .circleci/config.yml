@@ -16,8 +16,6 @@ jobs:
           name: Deploy to JordyBoothy
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              ls -lah
-              pwd
               mina deploy
             fi
 
