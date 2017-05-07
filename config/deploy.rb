@@ -1,6 +1,6 @@
 require 'mina/bundler'
 require 'mina/rails'
-require "mina/rsync"
+#require "mina/rsync"
 
 require 'mina/git'
 # require 'mina/rbenv'  # for rbenv support. (http://rbenv.org)
@@ -14,8 +14,8 @@ require 'mina/git'
 
 set :domain, 'jordyboothy.com'
 set :deploy_to, '/srv/jordyboothy'
-set :rsync_options, %w[--recursive --delete --delete-excluded --exclude .git*]
-#set :repository, 'git@github.com:Dolondro/jordyboothy.git'
+#set :rsync_options, %w[--recursive --delete --delete-excluded --exclude .git*]
+set :repository, 'git@github.com:Dolondro/jordyboothy.git'
 
 #set :branch, 'master'
 
@@ -76,8 +76,8 @@ task :deploy => :environment do
   deploy do
     # Put things that will set up an empty directory into a fully set-up
     # instance of your project.
-    invoke "rsync:deploy"
-    #invoke :'git:clone'
+    #invoke "rsync:deploy"
+    invoke :'git:clone'
     #queue "composer install --prefer-dist"
     # invoke :'deploy:link_shared_paths'
     # invoke :'bundle:install'
