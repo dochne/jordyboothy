@@ -8,3 +8,4 @@ jobs:
       - run: apt-get update
       - run: apt-get install ruby -y
       - run: gem install mina
+      - run: mina deploy
