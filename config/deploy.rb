@@ -15,7 +15,8 @@ require 'mina/git'
 set :domain, 'jordyboothy.com'
 set :deploy_to, '/srv/jordyboothy'
 #set :rsync_options, %w[--recursive --delete --delete-excluded --exclude .git*]
-set :repository, 'git@github.com:Dolondro/jordyboothy.git'
+#set :repository, 'git@github.com:Dolondro/jordyboothy.git'
+set :repository, 'https://github.com/Dolondro/jordyboothy'
 
 #set :branch, 'master'
 
