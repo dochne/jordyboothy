@@ -5,6 +5,7 @@ jobs:
       - image: php:7.0-apache
     working_directory: .
     steps:
+      - checkout
       - run:
           name: Install Mina
           command: |
@@ -16,6 +17,7 @@ jobs:
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
               ls -lah
+              pwd
               mina deploy
             fi
 
