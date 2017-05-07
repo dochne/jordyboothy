@@ -5,4 +5,6 @@ jobs:
       - image: php:7.0-apache
     working_directory: .
     steps:
+      - run: apt-get update
+      - run: apt-get install ruby
       - run: gem install mina
