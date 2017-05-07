@@ -5,7 +5,16 @@ jobs:
       - image: php:7.0-apache
     working_directory: .
     steps:
-      - run: apt-get update
-      - run: apt-get install ruby -y
-      - run: gem install mina
-      - run: mina deploy
+      - run:
+          name: Install Mina
+          command: |
+            apt-get update
+            apt-get install ruby -y
+            gem install mina
+      - deploy:
+          name: Deploy to JordyBoothy
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              mina deploy
+            fi
+
