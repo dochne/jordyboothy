@@ -1,0 +1,7 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: php:7.0-apache
+    steps:
+      - run: gem install mina
